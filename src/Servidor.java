@@ -18,7 +18,8 @@ public class Servidor {
             String mensagemCliente;
             mensagemCliente = scanner.nextLine();*/
 
-            BufferedReader entrada = new BufferedReader(new InputStreamReader(clienteSocket.getInputStream()));
+            //BufferedReader entrada = new BufferedReader(new InputStreamReader(clienteSocket.getInputStream()));
+            Scanner entrada = new Scanner(clienteSocket.getInputStream());
             PrintWriter saida = new PrintWriter(clienteSocket.getOutputStream(), true);
 
             //while (!mensagemCliente.equals("exit")) {
@@ -29,11 +30,13 @@ public class Servidor {
             }*/
 
             String mensagemCliente;
-            while ((mensagemCliente = entrada.readLine()) != null) {
-                    System.out.println("Cliente: " + mensagemCliente);
-                    // Responde para o cliente
-                    saida.println("Servidor.Servidor: Recebi sua mensagem -> " + mensagemCliente);
+            while ((entrada.hasNextLine())) {
+                mensagemCliente = entrada.nextLine();
+                System.out.println("Cliente: " + mensagemCliente);
+                // Responde para o cliente
+                saida.println("Servidor.Servidor: Recebi sua mensagem -> " + mensagemCliente);
             }
+            entrada.close();
             clienteSocket.close();
         } catch (IOException exception) {
             exception.printStackTrace();
