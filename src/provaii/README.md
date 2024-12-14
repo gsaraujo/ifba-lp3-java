@@ -11,15 +11,15 @@ Características de pilha implementada utilizando **Array**:
 Caracteristicas de pilha implementada utilizando o **ArrayList**
 - **ArrayList** tem tamanho dinâmico (ou seja, pode se adaptar a quantidade itens na pilha de forma dinâmica)
 - Facilidade para o desenvolvimento pois não é necessário a preocupação com o redimensionamento.
-- Redimensionamento automático. 
+- Redimensionamento automático.
 - Indicado em situações onde não sabemos o tamanho máximo da pilha antes de executar o programa
 - Indicado para programas que não possuem restrição de memória de forma significativa.
 
 ### Questão 2
--link
+[-link](https://github.com/gsaraujo/ifba-lp3-java/blob/main/src/provaii/Pilha.java)
 
 ### Questão 3
--link
+[-link](https://github.com/gsaraujo/ifba-lp3-java/blob/main/src/provaii/Metodos.java)
 
 ### Questão 4
 Podemos utilizar uma **PriorityQueue**. Isso porque a fila de prioridade é uma estrutura em que cada elemento tem uma prioridade associada e os elementos de maior prioridade sempre serão removidos primeiro.
@@ -30,11 +30,11 @@ Não sei se professor Matheus utilizou essa classe com vocês. Se não foi o cas
 ___
 
 ### Questão 5
--link
+[-link](https://github.com/gsaraujo/ifba-lp3-java/blob/main/src/provaii/Excecao.java)
 
 ### Questão 6
--link
+[-link](https://github.com/gsaraujo/ifba-lp3-java/blob/main/src/provaii/Pilha.java)
 
 ### Questão 12
 ### Questão 13
--link 
+[-link ](https://github.com/gsaraujo/ifba-lp3-java/tree/main/src/provaii/mvc)
