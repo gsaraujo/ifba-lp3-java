@@ -1,6 +1,8 @@
 package provaii;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Pilha {
     private int[] pilha;
@@ -54,5 +56,22 @@ public class Pilha {
 
     public boolean isEmptyAL() {
         return pilhaAL.isEmpty();
+    }
+
+    public void printQueue(){
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(1);
+        queue.add(2);
+        queue.add(3);
+        queue.remove();
+        queue.add(4);
+
+        System.out.println(queue);
+    }
+
+    public static void main(String[] args) {
+        Pilha p = new Pilha();
+        p.printQueue();
+
     }
 }
