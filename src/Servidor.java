@@ -1,4 +1,6 @@
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.io.*;
 import java.net.*;
 import java.util.Scanner;
@@ -7,8 +9,10 @@ public class Servidor {
     public static void main(String[] args) {
 
         int porta = 12345;
+        //int porta = 80;
 
         try (ServerSocket servidorSocket = new ServerSocket(porta)) {
+            
             System.out.println("Servidor rodando na porta: " + porta);
 
             Socket clienteSocket = servidorSocket.accept();
@@ -34,7 +38,7 @@ public class Servidor {
                 mensagemCliente = entrada.nextLine();
                 System.out.println("Cliente: " + mensagemCliente);
                 // Responde para o cliente
-                saida.println("Servidor.Servidor: Recebi sua mensagem -> " + mensagemCliente);
+                saida.println("Servidor.Servidor: Recebi sua mensagem -> " + toUpperCase(mensagemCliente));
             }
             entrada.close();
             clienteSocket.close();
@@ -43,4 +47,10 @@ public class Servidor {
             System.out.println("Erro");
         }
     }
+
+    public static String toUpperCase(String mensagem) {
+        return mensagem.toUpperCase();
+    }
+
+
 }

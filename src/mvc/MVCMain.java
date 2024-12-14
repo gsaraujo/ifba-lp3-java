@@ -1,8 +1,4 @@
-import encapsulamento.Carro;
-import encapsulamento.Moto;
-import encapsulamento.Pessoa;
-
-public class Main {
+public class MVCMain {
     public static void main(String[] args) {
 
         /*Pessoa p1 = new Pessoa("João",20);
