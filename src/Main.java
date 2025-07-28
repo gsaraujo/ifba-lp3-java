@@ -1,5 +1,9 @@
 import estoquelivro.EstoqueLivros;
 import estoquelivro.Livro;
+import mvc.controller.TaskController;
+import mvc.model.TaskModel;
+import mvc.view.TaskView;
+import mvc.view.TaskViewGUI;
 import playlist.Musica;
 import playlist.Playlist;
 
@@ -47,7 +51,7 @@ public class Main {
         /*
         * Resolução playlist
         * */
-
+        /*
         //Inserção no final
 
         //Medindo tempo ArrayList
@@ -132,6 +136,28 @@ public class Main {
         long duracaoRemocaoLinked = System.nanoTime() - inicioRemocaoLinked;
         System.out.println("Duração da execução: " + duracaoRemocaoLinked + " nanosegundos");
         System.out.println(playlistIniArray.totalDeFaixas());
+
+         * Fim resolução playlist
+         */
+
+        /*
+         * Resolução MVC
+         */
+
+        TaskModel taskModel = new TaskModel(1,"Primeira", "Primeira atividade");
+
+        TaskView taskView = new TaskView();
+
+        TaskController taskController = new TaskController(taskModel, taskView);
+
+        taskController.updateView();
+
+        TaskViewGUI viewGUI = new TaskViewGUI();
+
+        TaskController taskControllerGUI = new TaskController(taskModel, viewGUI);
+
+        taskControllerGUI.updateViewGUI();
+
 
 
 
