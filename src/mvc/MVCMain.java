@@ -1,23 +1,19 @@
+package mvc;
+
+import mvc.controller.TaskController;
+import mvc.model.TaskModel;
+import mvc.view.TaskView;
+import mvc.view.TaskViewGUI;
+
 public class MVCMain {
     public static void main(String[] args) {
 
-        /*Pessoa p1 = new Pessoa("João",20);
-        Pessoa p2 = new Pessoa("Pedro",20);
-        Pessoa p3 = new Pessoa("Maria",20);
-        p1.sobrenome = "Silva";
-
-        Carro carro = new Carro("BMW","X5","Azul","aah-99",1999);
-        carro.ligar();
-        carro.desligar();
-        Moto moto = new Moto();
-        moto.ligar();
-        moto.aMoto();
-        moto.desligar();
-        moto.aMoto();*/
-        //p1.setNome("José");//;nome = "José";
-        //p1.cpf = "12345678912";
-
-        //p1.aPessoa();
-        //p1.cumprimentar();
+        TaskModel taskModel = new TaskModel(1, "Primeira","Primeira da Tarefa");
+        TaskViewGUI taskViewGUI = new TaskViewGUI();
+        TaskView taskView = new TaskView();
+        TaskController taskController = new TaskController(taskModel, taskView); //Construtor TaskView
+        TaskController taskControllerGUI = new TaskController(taskModel, taskViewGUI);
+        taskController.updateView();
+        taskControllerGUI.updateViewGUI();
     }
 }
