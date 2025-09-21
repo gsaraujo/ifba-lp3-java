@@ -1,12 +1,16 @@
 import estoquelivro.EstoqueLivros;
 import estoquelivro.Livro;
 import mvc.controller.TaskController;
+import mvc.controller.TodoController;
 import mvc.model.TaskModel;
+import mvc.model.TodoModel;
 import mvc.view.TaskView;
 import mvc.view.TaskViewGUI;
+import mvc.view.TodoGUI;
 import playlist.Musica;
 import playlist.Playlist;
 
+import javax.swing.*;
 import java.util.Random;
 
 public class Main {
@@ -144,7 +148,7 @@ public class Main {
          * Resolução MVC
          */
 
-        TaskModel taskModel = new TaskModel(1,"Primeira", "Primeira atividade");
+        /*TaskModel taskModel = new TaskModel(1,"Primeira", "Primeira atividade");
 
         TaskView taskView = new TaskView();
 
@@ -156,7 +160,25 @@ public class Main {
 
         TaskController taskControllerGUI = new TaskController(taskModel, viewGUI);
 
-        taskControllerGUI.updateViewGUI();
+        taskControllerGUI.updateViewGUI();*/
+
+
+        /**
+         * Prova II - II unidade
+         */
+
+        TodoModel todoModel = new TodoModel();
+
+        TodoGUI todoGUI = new TodoGUI(todoModel);
+        SwingUtilities.invokeLater(todoGUI);
+
+        todoModel.addObserver(todoGUI);
+
+        TodoController todoController = new TodoController(todoModel);
+
+        todoController.rodarAplicacao();
+
+        System.exit(0);
 
 
 
