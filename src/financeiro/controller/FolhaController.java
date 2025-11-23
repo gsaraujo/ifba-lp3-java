@@ -1,10 +1,12 @@
 package financeiro.controller;
 
 import financeiro.model.Funcionario;
+import financeiro.model.Holerite;
 import financeiro.utils.Escritor;
 import financeiro.utils.Leitor;
 import financeiro.view.MenuConsole;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FolhaController {
@@ -15,17 +17,23 @@ public class FolhaController {
     public void processarFolha() {
         this.menu = new MenuConsole();
         String arquivoParaLeitura = this.menu.iniciarPrograma();
+        if (arquivoParaLeitura == null) {
+            return;
+        }
         leitor = new Leitor(arquivoParaLeitura);
 
         List<Funcionario> funcionarios = leitor.lerFuncionarios();
+        //Lista de holerites que serão exportados para o arquivo de pagamento
+        List<Holerite> holerites = new ArrayList<>();
 
         for (Funcionario funcionario : funcionarios) {
-            System.out.println(funcionario.toString());
+            Holerite holerite = new Holerite(funcionario);
+            holerite.calcularSalarioLiquido();
+            holerites.add(holerite);
         }
 
-        //this.solicitarArquivo();
-        //this.lerArquivo();
-        //this.calcularFolha();
+        Escritor escritor = new Escritor("folha_novembro.csv");
+        escritor.escreverArquivoExportacao(holerites);
 
     }
 }

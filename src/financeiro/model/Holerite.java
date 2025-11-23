@@ -6,6 +6,7 @@ public class Holerite {
     private double descontoInss;
     private double descontoIr;
     private double salarioLiquido;
+    private double valorHora;
 
     public Holerite(Funcionario funcionario) {
         this.funcionario = funcionario;
@@ -53,21 +54,42 @@ public class Holerite {
 
     public double calcularHorasExtras() {
         // Valor hora normal = salarioBase / 160
-        return 0;
+        this.valorHora = this.funcionario.getSalarioBase() / 160;
+        double valorHoraExtra = this.valorHora * 1.5;
+        double totalHorasExtras = valorHoraExtra * this.funcionario.getHorasExtras();
+        System.out.println("Horas extras: " + totalHorasExtras);
+        return totalHorasExtras;
+        //return valorHoraExtra * this.funcionario.getHorasExtras();
     }
 
     public double calcularFaltas() {
         // desconto de 8h por falta
-        return 0;
+        double descontoFalta = this.valorHora * 8;
+        double descontoTotalFaltas = descontoFalta * this.funcionario.getFaltas();
+        System.out.println("Faltas: " + descontoTotalFaltas);
+        return  descontoTotalFaltas;
+        //return descontoFalta * this.funcionario.getFaltas();
     }
 
-    public double calcularImpostos(double bruto) {
+    public void calcularImpostos() {
         // INSS e IR
-        return 0;
+        if (this.salarioBruto < 2500) {
+            this.descontoIr = 0;
+        } else if ((this.salarioBruto >= 2500) && (this.salarioBruto < 5000)) {
+            this.descontoIr = (this.salarioBruto - 2500) * 0.1;//0.1 = 10%
+        } else if (this.salarioBruto >= 5000) {
+            this.descontoIr = (this.salarioBruto - 5000) * 0.2;//0.2 = 20%
+        }
+        System.out.println("Imposto de renda: " + this.descontoIr);
+        this.descontoInss = Math.min(0.11 * salarioBruto, 800.00);//Se 11% do salário bruto for maior que 800, retorna 800 invés do valor de 11% do salário bruto
     }
 
     public void calcularSalarioLiquido() {
         // deve setar salarioBruto, descontoInss, descontoIr e salarioLiquido
+        this.salarioBruto = funcionario.getSalarioBase() + this.calcularHorasExtras() -  this.calcularFaltas();
+        this.calcularImpostos();
+        this.salarioLiquido = this.salarioBruto - this.descontoIr - this.descontoInss;
+
     }
 
 }
