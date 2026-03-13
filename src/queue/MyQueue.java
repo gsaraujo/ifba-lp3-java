@@ -1,52 +1,29 @@
 package queue;
 
-import java.util.Stack;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class MyQueue {
     public static void main(String[] args) {
-        Stack<Integer> stack = new Stack<>();
+        Queue<Character> queue = new LinkedList<>();
 
-        stack.push(109);
-        System.out.println(stack.peek());
+        queue.offer('(');
+        queue.offer('[');
+        queue.offer(']');
 
-        if (!stack.empty()) {
-            System.out.println("Stack is not empty");
+        if (queue.isEmpty()) {
+            System.out.println("Queue is empty");
+        } else  {
+            System.out.println("Queue is not empty");
+        }
+
+        System.out.println(queue.poll());
+        if (queue.isEmpty()) {
+            System.out.println("Queue is empty");
         } else {
-            System.out.println("Stack is empty");
+            System.out.println("Queue is not empty");
         }
-
-        System.out.println(stack.pop());
-
-        if (!stack.empty()) {
-            System.out.println("Stack is not empty");
-        } else {
-            System.out.println("Stack is empty");
-        }
-
-
-        /*stack.push(2);
-        stack.push(3);
-        System.out.println(stack.peek());
-
-        if (!stack.empty()) {
-            System.out.println("Stack is not empty");
-        }
-
-        System.out.println(stack.pop());
-        if (!stack.empty()) {
-            System.out.println("Stack is not empty");
-        }
-
-        System.out.println(stack.peek());
-
-        if (!stack.empty()) {
-            System.out.println("Stack is not empty");
-        }
-
-        System.out.println(stack.pop());*/
-
-
-
+        System.out.println(queue.peek());
 
     }
 }
