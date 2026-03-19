@@ -1,5 +1,6 @@
 package stack;
 
+import java.util.ArrayList;
 import java.util.Stack;
 
 public class MyStack {
@@ -44,6 +45,27 @@ public class MyStack {
         }
 
         System.out.println(stack.pop());*/
+
+        //Inverter uma pilha utilizando array
+        Stack<Integer> reverseStack = new Stack<>();
+        //adicionando itens a stack
+        for(int i = 0; i < 10; i++) {
+            reverseStack.push(i*10);
+        }
+        System.out.println(reverseStack);
+
+        ArrayList<Integer> invertedStack = new ArrayList<>();
+
+        while (!reverseStack.isEmpty()) {
+            invertedStack.add(reverseStack.pop());
+        }
+
+        for (int i = 0; i < invertedStack.size(); i++) {
+            reverseStack.push(invertedStack.get(i));
+        }
+
+        System.out.println(reverseStack);
+
 
 
 
