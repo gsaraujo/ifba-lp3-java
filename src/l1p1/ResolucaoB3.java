@@ -1,5 +1,9 @@
 package l1p1;
 
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
 public class ResolucaoB3 {
 
     public static void main(String[] args) {
@@ -53,7 +57,7 @@ public class ResolucaoB3 {
         fila.offer(30);
         fila.offer(40);
 
-        fila.pool();
+        fila.poll();
 
         System.out.println(fila);
 

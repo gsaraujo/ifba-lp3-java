@@ -1,5 +1,10 @@
 package l1p1;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
 public class ResolucaoB4 {
 
     public static void main(String[] args) {
@@ -29,7 +34,7 @@ public class ResolucaoB4 {
         for(int j=0; j<array.length; j++){
             pilha.push(array[j]);
         }
-
+        //E se a gente precisar imprimir na mesma ordem da pilha? Como a gente faria?
         System.out.println("Depois da inversao: " + pilha);
 
 

@@ -1,5 +1,7 @@
 package l1p1;
 
+import java.util.ArrayList;
+
 public class ResolucaoB1 {
     public static void main(String[] args) {
         ResolucaoB1 obj = new ResolucaoB1();

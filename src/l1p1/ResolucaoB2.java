@@ -1,5 +1,8 @@
 package l1p1;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class ResolucaoB2 {
     public static void main(String[] args) {
         ResolucaoB2 resolucaoB2 = new ResolucaoB2();
@@ -51,8 +54,11 @@ public class ResolucaoB2 {
     }
 
     public void q4() {
-        int[] numeros = {2, 4, 6, 8, 10};
+        int[] numeros = {2, 4, 6, 8, 10,15};
         int numeroUsuario = 15;
+        //ou você pode pedir para o usuário indicar qual número ele quer procurar
+        Scanner entrada = new Scanner(System.in);
+        numeroUsuario = entrada.nextInt();
 
         for (int i = 0; i < numeros.length; i++) {
             if(numeroUsuario == numeros[i]) {
