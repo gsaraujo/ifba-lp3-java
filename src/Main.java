@@ -1,14 +1,6 @@
-import estoquelivro.EstoqueLivros;
-import estoquelivro.Livro;
-import mvc.controller.TaskController;
-import mvc.controller.TodoController;
-import mvc.model.TaskModel;
-import mvc.model.TodoModel;
-import mvc.view.TaskView;
-import mvc.view.TaskViewGUI;
-import mvc.view.TodoGUI;
-import playlist.Musica;
-import playlist.Playlist;
+import iiunidade.mvc.controller.TodoController;
+import iiunidade.mvc.model.TodoModel;
+import iiunidade.mvc.view.TodoGUI;
 
 import javax.swing.*;
 import java.util.Random;
@@ -53,7 +45,7 @@ public class Main {
         System.out.println(estoqueLivros.removerLivro("903"));*/
 
         /*
-        * Resolução playlist
+        * Resolução iunidade.playlist
         * */
         /*
         //Inserção no final
@@ -102,13 +94,13 @@ public class Main {
         System.out.println("Duração da execução: " + duracaoIniLinked + " nanosegundos");
 
         //acessando itens
-        //acesso no array
+        //acesso no iunidade.array
         long inicioAcessoArray = System.nanoTime();
         for(int i = 0; i <= 10000; i++) {
             Musica m = playlistIniArray.acessoPorIndice(i);
         }
         long duracaoAcessoArray = System.nanoTime() - inicioAcessoArray;
-        System.out.println("Duração da execução de acesso no array: " + duracaoAcessoArray + " nanosegundos");
+        System.out.println("Duração da execução de acesso no iunidade.array: " + duracaoAcessoArray + " nanosegundos");
 
         //acesso no linkedlist
         long inicioAcessoLinked = System.nanoTime();
@@ -141,7 +133,7 @@ public class Main {
         System.out.println("Duração da execução: " + duracaoRemocaoLinked + " nanosegundos");
         System.out.println(playlistIniArray.totalDeFaixas());
 
-         * Fim resolução playlist
+         * Fim resolução iunidade.playlist
          */
 
         /*
