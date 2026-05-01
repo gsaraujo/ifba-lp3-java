@@ -25,8 +25,17 @@ public class Playlist {
         faixas.add(0,musica);
     }
 
-    public Musica tocarProxima(Musica musica) {
-        return null;
+    public Musica tocarProxima() {
+        int qtdMusicas = faixas.size();
+        if (qtdMusicas > 1) {
+            this.faixas.removeFirst();//mesmo efeito de this.faixas.remove(0);
+            return this.faixas.getFirst();//mesmo efeito de this.faixas.get(0);
+        } else {
+            if (qtdMusicas == 1) {
+                this.faixas.removeFirst();
+            }
+            return null;
+        }
 
     }
 
@@ -41,8 +50,12 @@ public class Playlist {
     }
 
     public Musica buscarPorArtista(String artista) {
+        for (Musica musica : faixas) {
+            if (musica.getArtista().equals(artista)) {
+                return musica;
+            }
+        }
         return null;
-
     }
 
     public int totalDeFaixas() {
@@ -50,6 +63,10 @@ public class Playlist {
     }
 
     public void listarTodas() {
+        for (Musica musica : faixas) {
+            System.out.println(this.faixas.indexOf(musica));//Isso me informa qual o índice daquela música que estamos visualizando no momento.
+            System.out.println(musica);
+        }
 
     }
 
